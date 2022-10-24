@@ -43,9 +43,16 @@ public class Web3AuthSample : MonoBehaviour
     {
         var loginConfigItem = new LoginConfigItem()
         {
-            verifier = "your_verifierid_from_web3auth_dashboard",
-            typeOfLogin = TypeOfLogin.GOOGLE,
-            clientId = "your_clientid_from_google_or_etc"
+            verifier = "ntv-facebook-testnet",
+            typeOfLogin = TypeOfLogin.FACEBOOK,
+            clientId = "484461269932086"
+        };
+        
+        var loginConfigItem1 = new LoginConfigItem()
+        {
+            verifier = "ntv-facebook-testnet",
+            typeOfLogin = TypeOfLogin.FACEBOOK,
+            clientId = "484461269932086"
         };
 
         web3Auth = GetComponent<Web3Auth>();
@@ -64,13 +71,14 @@ public class Web3AuthSample : MonoBehaviour
                 }
             }
             // If using your own custom verifier, uncomment this code. 
-            /*
+            
             ,
             loginConfig = new Dictionary<string, LoginConfigItem>
             {
-                {"CUSTOM_VERIFIER", loginConfigItem}
+                {"CUSTOM_VERIFIER", loginConfigItem},
+                {"CUSTOM_VERIFIER1", loginConfigItem1}
             }
-            */
+            
         });
         web3Auth.onLogin += onLogin;
         web3Auth.onLogout += onLogout;
